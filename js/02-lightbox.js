@@ -1,4 +1,33 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
+const gallery = document.querySelector('.gallery');
 
-console.log(galleryItems);
+const addImage = galleryItems
+  .map(
+    image => `<li class="gallery__item">
+    <a class="gallery__link" href="${image.original}">
+    <img class="gallery__image" src="${image.preview}" alt="${image.description}" />
+  </a>
+</li>`
+  )
+  .join('');
+
+gallery.insertAdjacentHTML('afterbegin', addImage);
+
+let simplelightbox = new SimpleLightbox('.gallery a');
+
+simplelightbox.captionsData = 'RRRRRRRRRRRRRRRRRRRRRRRRRRRRRR';
+
+const image = document.querySelectorAll('.gallery__image');
+
+for (const img of image) {
+  let imageAlt = img.getAttribute('alt');
+  imageAlt = 'dgfhdfdfg';
+  console.log(imageAlt);
+}
+
+const caption = image.captionsData;
+
+// const caption = captionsData(image);
+
+// console.log(caption);
