@@ -14,4 +14,11 @@ const addImage = galleryItems
 
 gallery.insertAdjacentHTML('afterbegin', addImage);
 
-let simplelightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+let simpleLightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+
+const blockOnSave = document.querySelectorAll('.gallery__image');
+for (const image of blockOnSave) {
+  image.addEventListener('click', event => {
+    event.preventDefault();
+  });
+}
