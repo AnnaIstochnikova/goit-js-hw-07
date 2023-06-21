@@ -14,20 +14,4 @@ const addImage = galleryItems
 
 gallery.insertAdjacentHTML('afterbegin', addImage);
 
-let simplelightbox = new SimpleLightbox('.gallery a');
-
-simplelightbox.captionsData = 'RRRRRRRRRRRRRRRRRRRRRRRRRRRRRR';
-
-const image = document.querySelectorAll('.gallery__image');
-
-for (const img of image) {
-  let imageAlt = img.getAttribute('alt');
-  imageAlt = 'dgfhdfdfg';
-  console.log(imageAlt);
-}
-
-const caption = image.captionsData;
-
-// const caption = captionsData(image);
-
-// console.log(caption);
+let simplelightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
